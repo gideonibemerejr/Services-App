@@ -9,6 +9,7 @@ var passport = require('passport');
 
 // load the env vars
 require('dotenv').config();
+
 var app = express();
 
 // connect to the MongoDB with mongoose
@@ -19,6 +20,7 @@ require('./config/database');
 // require our routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminssRouter = require('./routes/admins');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +34,7 @@ app.use(cookieParser());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/ceo', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
