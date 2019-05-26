@@ -1,5 +1,12 @@
 {% extends "./layout.twig" %}
 {% block main %}
-{{ title }}
-<h1>It is working</h1>
+{% include "../partials/nav.twig" %}
+<div class="jumbotron">
+ <h1 class="text-center mt-5">{{ title }}</h1>
+</div>
+<div>
+{% include "./sidebar.twig" %}
+z
+</div>
+
 {% endblock %}
