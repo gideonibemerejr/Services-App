@@ -1,13 +1,13 @@
 {% extends "./layout.twig" %}
 {% block main %}
-{% include "./sidebar.twig" %}
-{% include "../partials/nav.twig" %}
-<div class="jumbotron">
- <h1 class="text-center mt-5">{{ title }}</h1>
-</div>
-<div>
+    {% include "../partials/sidebar.twig" %}
+    {% include "../partials/nav.twig" %}
+    <body id="page-top">
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+            <h1>{{ title }}</h1>
+        </div>
 
-z
-</div>
+    </body>
 
 {% endblock %}
