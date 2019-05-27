@@ -1,15 +1,20 @@
-{% extends "./layout.twig" %}
+{% extends "../partials/layout.twig" %}
+{% block links %}
+
+
+<link href="/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+{% endblock %}
 {% block main %}
     
     
     <body id="page-top">
         <!-- Page Wrapper -->
         <div id="wrapper">
-            {% include "../partials/sidebar.twig" %}
+            {% include "./sidebar.twig" %}
             <div id="content-wrapper" class="d-flex flex-column">
                 <!-- Main Content -->
                 <div id="content">
-                {% include "../partials/nav.twig" %}
+                {% include "./nav.twig" %}
                 </div>
 
             </div>
@@ -18,4 +23,8 @@
 
     </body>
 
+{% endblock %}
+{% block scripts %}
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 {% endblock %}

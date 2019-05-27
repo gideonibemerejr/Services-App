@@ -5,6 +5,6 @@ module.exports = {
 
 function index(req, res, next) {
     res.render('admin/index', {
-        title: 'Dashboard'
+        title: 'Dashboard | Service App'
     });
 }

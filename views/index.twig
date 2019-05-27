@@ -1,9 +1,37 @@
 {% extends "./partials/layout.twig" %} 
+{% block links %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Stylesheet -->
+<link rel="stylesheet" href="/stylesheets/style.css">
+{% endblock %}
+
 {% block main %}
 <body>
-<h1>{{ title }}</h1>
-<p>Welcome to {{ title }}</p>
-<h1>gideon</h1>
+{% include "./partials/header.twig" %}
+<div class="main-wrapper ">
+<section class="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-10">
+                <div class="block">
+                    <span class="d-block mb-3 text-white text-capitalize">Quality isn't everything, it's the only thing</span>
+                    <h1 class="animated fadeInUp mb-5">Rely on our professional, expert services for your home and vehicle!</h1>
+                    <a href="#" target="_blank" class="btn btn-main animated fadeInUp btn-round-full">Book Today<i
+                            class="btn-icon fa fa-angle-right ml-2"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</div>
+{% include "./partials/footer.twig" %}
 </body>
 
 {% endblock %} 
+{% block scripts %}
+\
+{% endblock %}
