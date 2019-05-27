@@ -1,11 +1,19 @@
 {% extends "./layout.twig" %}
 {% block main %}
-    {% include "../partials/sidebar.twig" %}
-    {% include "../partials/nav.twig" %}
+    
+    
     <body id="page-top">
         <!-- Page Wrapper -->
         <div id="wrapper">
-            <h1>{{ title }}</h1>
+            {% include "../partials/sidebar.twig" %}
+            <div id="content-wrapper" class="d-flex flex-column">
+                <!-- Main Content -->
+                <div id="content">
+                {% include "../partials/nav.twig" %}
+                </div>
+
+            </div>
+
         </div>
 
     </body>
