@@ -8,7 +8,11 @@ var userSchema = new mongoose.Schema({
     City: String,
     Zip: Number,
     Phone: String,
-    appointments: [{type: Schema.Types.ObjectId, ref: 'Appointment'}]
+    appointments: [{type: Schema.Types.ObjectId, ref: 'Appointment'}],
+    isAdmin: {
+        type: Boolean,
+        default: false
+    }
 },{
 timestamps: true
 })
