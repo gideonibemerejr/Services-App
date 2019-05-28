@@ -12,7 +12,6 @@
 
     <body>
         <div class="main-wrapper "></div>
-        {% include "./partials/header.twig" %}
         <div
             class="container">
 
@@ -43,7 +42,7 @@
                                                 Login
                                             </button>
                                             <hr>
-                                            <a class="btn btn-google btn-user btn-block" href="/auth/google" target="_blank">
+                                            <a class="btn btn-google btn-user btn-block" href="/auth/google">
                                                 <i class="fab fa-google fa-fw"></i>
                                                 Login with Google
                                             </a>
@@ -63,6 +62,5 @@
             </div>
 
         </div>
-        {% include "./partials/footer.twig" %}
     </body>
 </div>{% endblock %}{% block scripts %}{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "../partials/layout.twig" %}
+{% block links2 %}
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.css" integrity="sha256-pH0lyAcRhQLVzOw5P7hFRvDjjckRCDplCbnDulA5CkI=" rel="stylesheet"/>
+{% endblock  %}
+{% block content %}
+
+    <div class="row justify-content-center">
+        <div class="col-xs-12 col-lg-10 justify-content-center">
+            <div id="calendar"></div>
+        </div>
+
+    </div>
+{% endblock %}
+{% block scripts2 %}
+    <script crossorigin="anonymous" integrity="sha256-4PIvl58L9q7iwjT654TQJM+C/acEyoG738iL8B8nhXg=" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js" type="text/javascript"></script>
+    <script crossorigin="anonymous" integrity="sha256-jrluEatvHor02eNo60ryUPAhGRaX0Vqw0vF9yZOQYAI=" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.0.1/fullcalendar.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            console.log('its working');
+            $('#calendar').fullCalendar({
+                events: '/ceo/calendarJSON/',
+                header: {
+                    left: '',
+                    center: 'prev title next',
+                    right: ''
+                },
+                firstDay: 0,
+                eventClick: function (event, jsEvent, view) {
+                    $('#modalTitle').html(event.title);
+                    $('#modalBody').html(event.description);
+                    $('#eventUrl').attr('href', event.url);
+                    $('#fullCalModal').modal();
+                    return false;
+                }
+            });
+        });
+    </script>
+{% endblock %}
