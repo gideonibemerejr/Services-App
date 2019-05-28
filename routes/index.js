@@ -7,23 +7,24 @@ const indexCtrl = require('../controllers/index');
 router.get('/', indexCtrl.index);
 
 /*GET Google OAuth login route */
-router.get('/auth/google', passport.authenticate(
-    'google',
-    { scope: ['profile', 'email'] }
-));
+router.get(
+  '/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
 
-/* GET Google OAuth callback route */ 
-router.get('/oauth2callback', passport.authenticate(
-    'google',
-    {
-        successRedirect: '/',
-        failureRedirect: '/services'
-    }
-));
+/* GET Google OAuth callback route */
 
-router.get('/logout', function (req, res) {
-    req.logout();
-    res.redirect('/');
+router.get(
+  '/oauth2callback',
+  passport.authenticate('google', {
+    successRedirect: '/',
+    failureRedirect: '/services'
+  })
+);
+
+router.get('/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
 });
 
 /* GET services page. */
@@ -31,16 +32,14 @@ router.get('/services', indexCtrl.services);
 /* GET login and register pages. */
 router.get('/login', indexCtrl.login);
 
-router.post('/ceo', passport.authenticate(
-    'local',
-    {
-        successRedirect: '/ceo',
-        failureRedirect: '/',
-        failureFlash: true
-    },
-));
+router.post(
+  '/ceo',
+  passport.authenticate('local', {
+    successRedirect: '/ceo',
+    failureRedirect: '/',
+    failureFlash: true
+  })
+);
 router.get('/register', indexCtrl.register);
-
-
 
 module.exports = router;
