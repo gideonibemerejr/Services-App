@@ -32,14 +32,6 @@ router.get('/services', indexCtrl.services);
 /* GET login and register pages. */
 router.get('/login', indexCtrl.login);
 
-router.post(
-  '/ceo',
-  passport.authenticate('local', {
-    successRedirect: '/ceo',
-    failureRedirect: '/',
-    failureFlash: true
-  })
-);
 router.get('/register', indexCtrl.register);
 
 module.exports = router;

@@ -1,76 +1,68 @@
 {% extends "./partials/layout.twig" %}
 {% block links %}
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!-- Stylesheet -->
-<link rel="stylesheet" href="/stylesheets/sb-admin-2.min.css">
-<link rel="stylesheet" href="/stylesheets/style.css">
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet">
+    <link
+    crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link href="/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/stylesheets/style.css" rel="stylesheet">
 {% endblock %}
 
 {% block main %}
 
-<body>
-    <div class="main-wrapper "></div>
-    {% include "./partials/header.twig" %}
-    <div class="container">
-    
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-    
-            <div class="col-xl-10 col-lg-12 col-md-9">
-    
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user" action='/ceo' method="POST">
-                                        <div class="form-group">
-                                            <input name="name" type="text" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Username or Email Address...">
+    <body>
+        <div class="main-wrapper "></div>
+        {% include "./partials/header.twig" %}
+        <div
+            class="container">
+
+            <!-- Outer Row -->
+            <div class="row justify-content-center">
+
+                <div class="col-xl-10 col-lg-12 col-md-9">
+
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div
+                            class="card-body p-0">
+                            <!-- Nested Row within Card Body -->
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                         </div>
-                                        <div class="form-group">
-                                            <input name="password" type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        <button type="submit" class="btn btn-main btn-user btn-block">
-                                            Login
-                                        </button>
+                                        <form action='/ceo' autocomplete="off" class="user" method="POST">
+                                            <div class="form-group">
+                                                <input aria-describedby="emailHelp" class="form-control form-control-user" id="exampleInputEmail" name="name" placeholder="Enter Username or Email Address..." type="text">
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control form-control-user" id="exampleInputPassword" name="password" placeholder="Password" type="password">
+                                            </div>
+                                            <button class="btn btn-main btn-user btn-block" type="submit">
+                                                Login
+                                            </button>
+                                            <hr>
+                                            <a class="btn btn-google btn-user btn-block" href="/auth/google" target="_blank">
+                                                <i class="fab fa-google fa-fw"></i>
+                                                Login with Google
+                                            </a>
+                                        </form>
                                         <hr>
-                                        <a href="/auth/google" target="_blank" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="/register">Create an Account!</a>
+                                        <div class="text-center">
+                                            <a class="small" href="/register">Create an Account!</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
-    
+
             </div>
-    
+
         </div>
-    
-    </div>
-    {% include "./partials/footer.twig" %}
-    </div>
-    
-   
-    
-    {% endblock %}
-    {% block scripts %}
-    
-    {% endblock %}
-   
+        {% include "./partials/footer.twig" %}
+    </body>
+</div>{% endblock %}{% block scripts %}{% endblock %}
