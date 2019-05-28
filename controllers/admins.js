@@ -1,5 +1,6 @@
 const Service = require('../models/service');
 
+
 module.exports = {
   index,
   services,
@@ -13,7 +14,8 @@ function index(req, res, next) {
     res.render('admin/index', {
       title: 'Dashboard | Service App',
       heading: 'Dashboard',
-      services
+      services,
+      user: req.user
     });
   });
 }
