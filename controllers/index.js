@@ -19,7 +19,8 @@ function index(req, res, next) {
         res.render('index', {
             title: 'Service App | Quality Detailing',
             heading: 'Home',
-            services
+            services,
+            user: req.user,
 
         });
     })
@@ -31,7 +32,9 @@ function services(req, res, next) {
         res.render('services/index', {
             title: 'Dashboard | Services',
             heading: 'Services',
-            services
+            services,
+            user: req.user,
+
         });
     })
 }

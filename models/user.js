@@ -14,7 +14,8 @@ var userSchema = new Schema ({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    googleId: String
 },{
 timestamps: true
 })

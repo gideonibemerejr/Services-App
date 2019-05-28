@@ -33,7 +33,25 @@
                     <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
                         <a href="/" class="btn btn-solid-border btn-round-full">Book us Now</a>
                     </form>
-                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                {% if user %}
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, {{ user.name }} </a>
+                 
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                        {% if user.name == 'admin' %}
+                            <li><a href="/ceo" class="dropdown-item">Dashboard</a></li>
+                        {% else %}
+                            <li><a href="/" class="dropdown-item">Profile</a></li>
+                        {% endif %}
+                        <li><a class="dropdown-item" href="/logout">Logout </a></li>
+                    </ul>
+                </li>
+                
+                {% else %}
+                <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+                {% endif %}
+                
                 </ul>
             </div>
         </div>
