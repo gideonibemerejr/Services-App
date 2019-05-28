@@ -4,54 +4,71 @@
     <nav class="navbar navbar-expand-lg  py-4" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="/">
-                All <span>Pro</span>
+                All
+                <span>Pro</span>
             </a>
 
-            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarsExample09" data-toggle="collapse" type="button">
                 <span class="fa fa-bars"></span>
             </button>
 
             <div class="collapse navbar-collapse text-center" id="navbarsExample09">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle"  id="dropdown03" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Services</a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a href="/services" class="dropdown-item">All</a></li>
+                        <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" id="dropdown03">Services</a>
+                        <ul aria-labelledby="dropdown03" class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/services">All</a>
+                            </li>
                             {% for service in services %}
-                                <li><a class="dropdown-item" href="/">{{ service.name }}</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/">{{ service.name }}</a>
+                                </li>
                             {% endfor %}
-                            
+
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="/">Contact</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Contact</a>
+                    </li>
                     <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
-                        <a href="/" class="btn btn-solid-border btn-round-full">Book us Now</a>
+                        <a class="btn btn-solid-border btn-round-full" href="/">Book us Now</a>
                     </form>
-                {% if user %}
-                <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi, {{ user.name }} </a>
-                 
-                    
-                    <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                        {% if user.name == 'admin' %}
-                            <li><a href="/ceo" class="dropdown-item">Dashboard</a></li>
-                        {% else %}
-                            <li><a href="/" class="dropdown-item">Profile</a></li>
-                        {% endif %}
-                        <li><a class="dropdown-item" href="/logout">Logout </a></li>
-                    </ul>
-                </li>
-                
-                {% else %}
-                <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
-                {% endif %}
-                
+                    {% if user %}
+                        <li class="nav-item dropdown">
+                            <a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="dropdown04">Hi,
+                                {{ user.name }}
+                            </a>
+
+
+                            <ul aria-labelledby="dropdown04" class="dropdown-menu">
+                                {% if user.name == 'admin' %}
+                                    <li>
+                                        <a class="dropdown-item" href="/ceo">Dashboard</a>
+                                    </li>
+                                {% else %}
+                                    <li>
+                                        <a class="dropdown-item" href="/users/{{ user._id }}/show">Profile</a>
+                                    </li>
+                                {% endif %}
+                                <li>
+                                    <a class="dropdown-item" href="/logout">Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                    {% endif %}
+
                 </ul>
             </div>
         </div>
