@@ -15,7 +15,7 @@ var app = express();
 // connect to the MongoDB with mongoose
 require('./config/database');
 // configure Passport
-// require('./config/passport');
+require('./config/passport');
 
 // require our routes
 var indexRouter = require('./routes/index');
@@ -26,15 +26,29 @@ var adminsRouter = require('./routes/admins');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'twig');
 
+// express middleware setup
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+// express session setup
+app.use(session({
+  secret: 'ServiceLit!',
+  resave: false,
+  saveUninitialized: true
+}));
+
+// passportjs set up
+app.use(passport.initialize());
+app.use(passport.session());
+
+// mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/ceo', adminsRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

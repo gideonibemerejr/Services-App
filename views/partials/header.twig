@@ -19,17 +19,21 @@
                         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle"  id="dropdown03" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Services</a>
                         <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                            <li><a class="dropdown-item" href="/">Carpet &amp; Upholstery</a></li>
+                            <li><a href="/services" class="dropdown-item">All</a></li>
+                            {% for service in services %}
+                                <li><a class="dropdown-item" href="/">{{ service.name }}</a></li>
+                            {% endfor %}
+                            
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="/">Contact</a></li>
                     <form class="form-lg-inline my-2 my-md-0 ml-lg-4 text-center">
                         <a href="/" class="btn btn-solid-border btn-round-full">Book us Now</a>
                     </form>
-                    <li class="nav-item"><a href="/" class="nav-link">Login / Register</a></li>
+                    <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
                 </ul>
             </div>
         </div>

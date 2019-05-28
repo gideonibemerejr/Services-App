@@ -32,12 +32,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">All Services</h6>
-                <a class="collapse-item" href="buttons.html">All</a>
-                <a class="collapse-item" href="buttons.html">Basic Detail</a>
-                <a class="collapse-item" href="cards.html">Full Service Detail</a>
-                <a class="collapse-item" href="cards.html">Full Interior Detail</a>
-                <a class="collapse-item" href="cards.html">Carpet &amp; Upholstery</a>
-                <a class="collapse-item" href="cards.html">Pressure Washing</a>
+                <a class="collapse-item" href="/">All</a>
+                {% for service in services %}
+                    <a class="collapse-item" href="/services/{{service._id}}">{{ service.name }}</a>
+                {% endfor %}
             </div>
         </div>
     </li>
@@ -52,11 +50,9 @@
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Addons for:</h6>
-                <a class="collapse-item" href="buttons.html">Basic Detail</a>
-                <a class="collapse-item" href="cards.html">Full Service Detail</a>
-                <a class="collapse-item" href="cards.html">Full Interior Detail</a>
-                <a class="collapse-item" href="cards.html">Carpet &amp; Upholstery</a>
-                <a class="collapse-item" href="cards.html">Pressure Washing</a>
+                {% for service in services %}
+                <a class="collapse-item" href="/services/{{service._id}}/addons">{{ service.name }}</a>
+                {% endfor %}
             </div>
         </div>
     </li>

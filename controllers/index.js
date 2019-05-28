@@ -1,26 +1,34 @@
 const Service = require('../models/service');
 
-
 module.exports = {
     index,
-    services
+    services,
+    login,
+    register
+}
+function register(req, res, next) {
+res.render('register',{title: 'Register'});
+}
+
+function login(req, res, next){
+    res.render('login', { title: 'Login' });
 }
 
 function index(req, res, next) {
     Service.find({}, (err, services) => {
-        res.render('admin/index', {
-            title: 'Dashboard | Service App',
-            heading: 'Dashboard',
+        res.render('index', {
+            title: 'Service App | Quality Detailing',
+            heading: 'Home',
             services
 
         });
     })
-   
+
 }
 
 function services(req, res, next) {
     Service.find({}, (err, services) => {
-        res.render('admin/services/index', {
+        res.render('services/index', {
             title: 'Dashboard | Services',
             heading: 'Services',
             services
