@@ -333,6 +333,10 @@ a:focus {
   width: 100%;
   height: 100%;
 }
+svg{
+  width: 30%;
+  height: auto;
+}
 
 #wrapper-work ul li .items-text {
   position: absolute;
@@ -538,7 +542,9 @@ ul.dropdown-menu li {
 .intro-item i {
   font-size: 60px;
   line-height: 60px;
+
 }
+
 
 .color-one {
   color: #45e8d2;
@@ -1268,6 +1274,10 @@ h3.quote::before {
 
 .footer-socials li a {
   margin-left: 15px;
+}
+.dark, .dark h4, .dark h2 {
+  color: #ffffff;
+  background-color: #222328;
 }
 
 /*=== MEDIA QUERY ===*/
