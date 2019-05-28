@@ -13,12 +13,12 @@ var sizeSchema = new Schema({
             max: 3
         },
         cost: Number
-    }, 
-    // includes: [includesSchema],
-    // addons: [addonSchema]
+    },
+    includes: [includesSchema],
+    addons: [addonSchema]
 }, {
-    timestamps: true,
-});
+        timestamps: true,
+    });
 
 var includesSchema = new Schema({
     name: {
@@ -27,7 +27,7 @@ var includesSchema = new Schema({
     }
 });
 
-var addonSchema = new Schema ({
+var addonSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -41,17 +41,17 @@ var addonSchema = new Schema ({
         cost: Number
     },
 }, {
-    timestamps: true
-})
+        timestamps: true
+    })
 
 var serviceSchema = new Schema({
     name: {
         type: String,
         required: true
     },
-    // sizes: [sizeSchema],
+    sizes: [sizeSchema],
 }, {
-    timestamps: true,
-})
+        timestamps: true,
+    })
 
 module.exports = mongoose.model('Service', serviceSchema);

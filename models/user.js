@@ -24,4 +24,6 @@ var userSchema = new Schema(
   }
 );
 
+userSchema.pre('save')
+
 module.exports = mongoose.model('User', userSchema);
