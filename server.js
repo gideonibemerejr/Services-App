@@ -46,7 +46,7 @@ app.use(passport.session());
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
-app.use('/', usersRouter);
+app.use('/users', usersRouter);
 app.use('/ceo', adminsRouter);
 
 

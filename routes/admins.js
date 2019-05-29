@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const adminCtrl = require('../controllers/admins');
-const apptsCtrl = require('../controllers/appts');
+const adminCtrl = require('../controllers/admin/admins');
+const servicesCtrl = require('../controllers/admin/services')
+const apptsCtrl = require('../controllers/admin/appts');
 const passport = require('passport');
 const utils = require('../utils/utils');
 
@@ -16,10 +17,27 @@ router.post(
     failureFlash: true
   })
 );
-router.get('/services', adminCtrl.services);
-router.get('/appointments', adminCtrl.appts);
-router.get('/calendarJSON', apptsCtrl.data);
-router.get('/tasks', adminCtrl.tasks);
-router.get('/revenue', adminCtrl.revenue);
+
+/* Admin Services Access */
+router.get('/services', servicesCtrl.index);
+// router.get('/services/new', servicesCtrl.new);
+// router.get('/services/:id', servicesCtrl.show);
+
+// router.post('/services' servicesCtrl.create);
+
+// router.put('/services/:id', servicesCtrl.update);
+// router.delete('/services/:id', servicesCtrl.delete);
+// router.get('/services/:id/edit', servicesCtrl.edit);
+
+
+// /* Admin Appts Access */
+// router.get('/appointments', apptsCtrl.index);
+// router.get('/calendarJSON', apptsCtrl.data);
+
+// /* Admin Tasks Access */
+// router.get('/tasks', tasksCtrl.index);
+
+// /* Admin Tasks Access */
+// router.get('/revenue', revenueCtrl.index);
 
 module.exports = router;
