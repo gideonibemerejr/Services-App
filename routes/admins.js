@@ -9,10 +9,10 @@ const utils = require('../utils/utils');
 
 router.get('/', utils.isLoggedIn, adminCtrl.index);
 router.post(
-  '/',
+  '/', utils.hasInfo,
   passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/',
+    failureRedirect: '/login',
     failureFlash: true
   })
 );
