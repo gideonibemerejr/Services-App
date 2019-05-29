@@ -13,14 +13,12 @@ var addonSchema = new Schema({
         type: String,
         required: true
     },
-    price: {
-        time: {
-            type: Number,
-            min: 1,
-            max: 3
-        },
-        cost: Number
+    time: {
+        type: Number,
+        min: 1,
+        max: 3
     },
+    cost: Number
 }, {
         timestamps: true
     })
@@ -29,14 +27,12 @@ var sizeSchema = new Schema({
         type: String,
         required: true
     },
-    price: {
-        time: {
-            type: Number,
-            min: 1,
-            max: 3
-        },
-        cost: Number
+    time: {
+        type: Number,
+        min: 1,
+        max: 3
     },
+    cost: Number,
     includes: [includesSchema],
     addons: [addonSchema]
 }, {
