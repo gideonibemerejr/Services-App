@@ -1,9 +1,9 @@
 exports.services = [
-    { name: 'Basic Service Detail' },
-    { name: 'Interior Detail' },
-    { name: 'Full Service Detail' },
-    { name: 'Carpet & Upholstery' },
-    { name: 'Pressure Washing' },
+    { serviceName: 'Basic Service Detail' },
+    { serviceName: 'Interior Detail' },
+    { serviceName: 'Full Service Detail' },
+    { serviceName: 'Carpet & Upholstery' },
+    { serviceName: 'Pressure Washing' },
 ];
 
 exports.users = [

@@ -9,30 +9,34 @@
                     class="card shadow mb-4">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between ">
-                        <h6 class="m-0 font-weight-bold text-primary">{{ service.service_name }}</h6>
+                        <h6 class="m-0 font-weight-bold text-primary">{{ service.serviceName }}</h6>
                         <div class="dropdown no-arrow">
                             <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" id="dropdownMenuLink" role="button">
                                 <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                             </a>
                             <div aria-labelledby="dropdownMenuLink" class="dropdown-menu dropdown-menu-right shadow animated--fade-in">
                                 <div class="dropdown-header">Actions:</div>
-                                <a class="d-flex flex-row dropdown-item align-items-center justify-content-between" href="#">
-                                    <p style="margin: 0;">Edit</p>
-                                    <i class="far fa-edit"></i>
-                                </a>
+                                <form action="/ceo/services/{{ service._id }}?_method=PUT" method="POST">
+                                    <button class="d-flex flex-row dropdown-item align-items-center justify-content-between" type="submit">
+                                        <p style="margin: 0;">Edit</p>
+                                        <i class="far fa-edit"></i>
+                                    </button>
+                                </form>
                                 <div class="dropdown-divider"></div>
-                                <a class="d-flex flex-row dropdown-item text-danger align-items-center justify-content-between" href="#">
-                                    <p style="margin: 0;">Delete</p>
-                                    <i class="far fa-trash-alt"></i>
-                                </a>
+                                <form action="/ceo/services/{{ service._id }}?_method=DELETE" method="POST">
+                                    <button class="d-flex flex-row dropdown-item text-danger align-items-center justify-content-between" type="submit">
+                                        <p style="margin: 0;">Delete</p>
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <!-- Card Body -->
                     <div class="card-body">
                         Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                in order to toggle a dropdown menu.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            in order to toggle a dropdown menu.
                     </div>
                 </div>
             </div>

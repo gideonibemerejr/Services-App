@@ -9,6 +9,7 @@ const utils = require('../utils/utils');
 /* ADMIN LOGIN */
 
 router.get('/', adminCtrl.index);
+
 router.post(
   '/', utils.hasInfo,
   passport.authenticate('local', {
@@ -23,7 +24,7 @@ router.get('/services', servicesCtrl.index);
 router.get('/services/new', servicesCtrl.newService);
 // router.get('/services/:id', servicesCtrl.show);
 
-router.post('/services', servicesCtrl.create);
+router.post('/services', utils.hasInfo, servicesCtrl.create);
 
 // router.put('/services/:id', servicesCtrl.update);
 // router.delete('/services/:id', servicesCtrl.delete);
