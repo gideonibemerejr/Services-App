@@ -1,6 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 const User = require('../models/user');
 
@@ -35,7 +36,7 @@ passport.use(
             return cb(null, newUser);
           });
         }
-      });``
+      }); ``
     }
   )
 );
@@ -64,7 +65,16 @@ passport.use(
   )
 );
 
-passport.use
+passport.use( new FacebookStrategy( 
+  {
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+    callbackURL: process.env.FACEBOOK_CALLBACK
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    User.findOne({'facebookID: '})
+  }
+));
 
 
 
