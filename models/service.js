@@ -40,7 +40,7 @@ var sizeSchema = new Schema({
     });
 
 var serviceSchema = new Schema({
-    name: {
+    service_name: {
         type: String,
         required: true
     },

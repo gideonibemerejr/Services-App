@@ -38,7 +38,7 @@
                 <h6 class="collapse-header">All Services</h6>
                 <a class="collapse-item" href="/ceo/services">All</a>
                 {% for service in services %}
-                    <a class="collapse-item" href="/services/{{service._id}}">{{ service.name }}</a>
+                    <a class="collapse-item" href="/services/{{service._id}}">{{ service.service_name }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Addons for:</h6>
                 {% for service in services %}
-                    <a class="collapse-item" href="/services/{{service._id}}/addons">{{ service.name }}</a>
+                    <a class="collapse-item" href="/services/{{service._id}}/addons">{{ service.service_name }}</a>
                 {% endfor %}
             </div>
         </div>
