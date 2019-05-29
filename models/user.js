@@ -5,6 +5,8 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
+    first_name: String,
+    last_name: String,
     name: { type: String, required: true },
     password: String,
     avatar: String,
@@ -18,7 +20,8 @@ const userSchema = new Schema(
       type: Boolean,
       default: false
     },
-    googleId: String
+    googleId: String,
+    facebookId: String
   },
   {
     timestamps: true

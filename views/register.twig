@@ -67,7 +67,7 @@
     {% block scripts %}
         <script>
             window.fbAsyncInit = function () {
-                FB.init({appId: '{your-app-id}', cookie: true, xfbml: true, version: '{api-version}'});
+                FB.init({appId: process.env.FACEBOOK_APP_ID, cookie: true, xfbml: true, version: '3.3'});
 
                 FB.AppEvents.logPageView();
 
