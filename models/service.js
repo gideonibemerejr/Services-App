@@ -32,6 +32,11 @@ var sizeSchema = new Schema({
         min: 1,
         max: 3
     },
+    timeMeasurement: {
+        type: String,
+        enum: ['hours', 'minutes'],
+        required: true
+    },
     cost: Number,
     includes: [includesSchema],
     addons: [addonSchema]
@@ -40,7 +45,7 @@ var sizeSchema = new Schema({
     });
 
 var serviceSchema = new Schema({
-    name: {
+    serviceName: {
         type: String,
         required: true
     },

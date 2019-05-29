@@ -10,6 +10,6 @@ function isLoggedIn(req, res, next) {
 
 function hasInfo(req, res, next) {
   if (req.body.name !== '' && req.body.password !== '') return next();
-  res.redirect('/login');
+  res.redirect('back');
 }
 
