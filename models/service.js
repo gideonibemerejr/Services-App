@@ -1,26 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-var sizeSchema = new Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    price: {
-        time: {
-            type: Number,
-            min: 1,
-            max: 3
-        },
-        cost: Number
-    },
-    includes: [includesSchema],
-    addons: [addonSchema]
-}, {
-        timestamps: true,
-    });
-
-var includesSchema = new Schema({
+const includesSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -43,6 +24,24 @@ var addonSchema = new Schema({
 }, {
         timestamps: true
     })
+var sizeSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    price: {
+        time: {
+            type: Number,
+            min: 1,
+            max: 3
+        },
+        cost: Number
+    },
+    includes: [includesSchema],
+    addons: [addonSchema]
+}, {
+        timestamps: true,
+    });
 
 var serviceSchema = new Schema({
     name: {

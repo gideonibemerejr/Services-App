@@ -5,34 +5,14 @@ const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/user');
 
 passport.use(
-  new LocalStrategy(
-    {
-      usernameField: 'name'
-    },
-    (name, password, done) => {
-      User.findOne({ name: name }, (err, user) => {
-        if (err) return done(err);
-        if (!user) {
-          return done(null, false, { message: 'Incorrect Username' });
-        }
-        if (user.password != password) {
-          return done(null, false, { message: 'Incorrect Password' });
-        }
-        return done(null, user);
-      });
-    }
-  )
-);
-
-passport.use(
   new GoogleStrategy(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
       callbackURL: process.env.GOOGLE_CALLBACK
     },
-    function(accessToken, refreshToken, profile, cb) {
-      User.findOne({ googleId: profile.id }, (err, user) => {
+    function (accessToken, refreshToken, profile, cb) {
+      User.findOne({ 'googleId': profile.id }, (err, user) => {
         if (err) return cb(err);
         if (user) {
           if (!user.avatar) {
@@ -55,10 +35,38 @@ passport.use(
             return cb(null, newUser);
           });
         }
+      });``
+    }
+  )
+);
+passport.use(
+  new LocalStrategy(
+    {
+      usernameField: 'name'
+    },
+    function (name, password, done) {
+      User.findOne({ name: name }, function (err, user) {
+        if (err) return done(err);
+        if (!user) {
+          return done(null, false, { message: 'Incorrect Username' });
+        }
+        user.comparePassword(password, function (err, res) {
+          if (err) {
+            return done(err);
+          }
+          if (!res) {
+            return done(null, false);
+          }
+          return done(null, user);
+        })
       });
     }
   )
 );
+
+passport.use
+
+
 
 passport.serializeUser((user, done) => {
   done(null, user.id);

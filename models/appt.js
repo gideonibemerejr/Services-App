@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-var apptSchema = new Schema({
+const apptSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: 'User'
@@ -17,8 +17,8 @@ var apptSchema = new Schema({
     },
     date: Date
 }, {
-    timestamps: true
-});
+        timestamps: true
+    });
 
 
 module.exports = mongoose.model('Appointment', apptSchema);
