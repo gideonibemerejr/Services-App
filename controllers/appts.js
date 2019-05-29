@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function data(req, res, next) {
-  var e1 = [
+  const e1 = [
     'Hackathon',
     'Pizza Break',
     'Coder Meeting',
@@ -21,7 +21,7 @@ function data(req, res, next) {
     'Beta Testing',
     'Pub Crawl'
   ];
-  var e2 = [
+  const e2 = [
     'ASP.NET Meetup',
     'Perl Meetup',
     'Node.js Meetup',
@@ -30,12 +30,12 @@ function data(req, res, next) {
     'CSS Meetup',
     'ASP.NET Meetup'
   ];
-  var events = [];
+  const events = [];
 
   for (x = 1; x < 12; x++) {
-    var i = x % 4 === 0 ? x - 15 : x % 9 === 0 ? 15 : x;
-    var r = moment(new Date()).add(i, 'd');
-    var e =
+    const i = x % 4 === 0 ? x - 15 : x % 9 === 0 ? 15 : x;
+    const r = moment(new Date()).add(i, 'd');
+    const e =
       x % 3 === 0
         ? moment(new Date())
             .add(i, 'd')
@@ -63,9 +63,9 @@ function data(req, res, next) {
 
   /* More random events! */
   for (x = 1; x < 6; x++) {
-    var i = x % 4 === 0 ? x - 7 : x;
-    var r = moment(new Date()).add(i, 'd');
-    var e =
+    const i = x % 4 === 0 ? x - 7 : x;
+    const r = moment(new Date()).add(i, 'd');
+    const e =
       x % 3 === 0
         ? moment(new Date())
             .add(i, 'd')
