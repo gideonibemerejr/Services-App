@@ -69,10 +69,12 @@ passport.use(new FacebookStrategy(
   {
     clientID: process.env.FACEBOOK_APP_ID,
     clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK
+    callbackURL: process.env.FACEBOOK_CALLBACK,
   },
   function (accessToken, refreshToken, profile, cb) {
     User.findOne({ 'facebookId': profile.id }, (err, user) => {
+      console.log(err);
+      console.log(profile);
       if (err) return cb(err);
       if (user) {
         if (!user.avatar) {
