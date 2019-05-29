@@ -10,6 +10,10 @@ router.get(
   '/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 );
+router.get(
+  '/auth/facebook',
+  passport.authenticate('facebook', { scope: ['profile', 'email'] })
+);
 
 /* GET Google OAuth callback route */
 
