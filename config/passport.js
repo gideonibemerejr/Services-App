@@ -1,7 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const LocalStrategy = require('passport-local').Strategy;
-const FacebookStrategy = require('passport-facebook').Strategy;
 
 const User = require('../models/user');
 
@@ -64,42 +63,6 @@ passport.use(
     }
   )
 );
-
-passport.use(new FacebookStrategy(
-  {
-    clientID: process.env.FACEBOOK_APP_ID,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.FACEBOOK_CALLBACK
-  },
-  function (accessToken, refreshToken, profile, cb) {
-    User.findOne({ 'facebookId': profile.id }, (err, user) => {
-      if (err) return cb(err);
-      if (user) {
-        if (!user.avatar) {
-          user.avatar = profile.profile_pic;
-          user.save(err => {
-            return cb(null, user);
-          });
-        } else {
-          return cb(null, user);
-        }
-      } else {
-        // here we should have a NEW user via OAuth!
-        let newUser = new User({
-          first_name: profile.first_name,
-          last_name: profile.last_name,
-          name: profile.name,
-          email: profile.email,
-          facebookId: profile.id
-        });
-        newUser.save(err => {
-          if (err) return cb(err);
-          return cb(null, newUser);
-        });
-      }
-    })
-  }
-));
 
 
 
