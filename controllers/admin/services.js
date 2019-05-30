@@ -3,10 +3,11 @@ const Service = require('../../models/service');
 
 module.exports = {
     index,
+    deleteService,
     newService,
     create,
-    deleteService,
-    edit
+    edit,
+    update
 
 };
 function deleteService(req, res, next) {
