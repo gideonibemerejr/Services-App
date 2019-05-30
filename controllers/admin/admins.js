@@ -20,25 +20,8 @@ function index(req, res, next) {
   });
 }
 
-function services(req, res, next) {
-  Service.find({}, (err, services) => {
-    res.render('admin/services/index', {
-      title: 'Dashboard | Services',
-      heading: 'Services',
-      services
-    });
-  });
-}
 
-function appts(req, res, next) {
-  Service.find({}, (err, services) => {
-    res.render('admin/appts/index', {
-      title: 'Dashboard | Services',
-      heading: 'Appointments',
-      services
-    });
-  });
-}
+
 
 function tasks(req, res, next) {
   Service.find({}, (err, services) => {

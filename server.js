@@ -20,7 +20,8 @@ require('./config/passport');
 // require our routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var adminsRouter = require('./routes/admins');
+var adminsRouter = require('./routes/admin/admins');
+var adminServicesRouter = require('./routes/admin/services');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -49,6 +50,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/ceo', adminsRouter);
+app.use('/ceo/services', adminServicesRouter);
 
 
 // catch 404 and forward to error handler
