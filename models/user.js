@@ -32,14 +32,10 @@ userSchema.pre('save', function (next) {
   let user = this;
   let pwd = this.password;
   if (!user.isAdmin) next();
-  console.log(pwd, "pwd line 31");
-  console.log(user, "User.js line 32");
   bcrypt.genSalt(saltRounds, function (err, salt) {
     bcrypt.hash(pwd, salt, function (err, hash) {
       if (err) return next(err);
-      console.log(user, 'line 35');
       user.password = hash;
-      console.log('It worked?')
       next();
     })
   })

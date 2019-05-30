@@ -16,8 +16,9 @@ function newService(req, res, next) {
     );
 }
 function create(req, res, next) {
+    console.log(req.body.serviceName);
     Service.create(req.body);
-    res.redirect('admin/services/index');
+    res.redirect('/ceo/services');
 }
 
 function index(req, res, next) {
