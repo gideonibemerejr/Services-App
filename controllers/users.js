@@ -23,3 +23,5 @@ function show(req, res, next) {
     res.render('users/show', { user: req.user });
   });
 }
+
+
