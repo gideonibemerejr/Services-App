@@ -49,7 +49,11 @@ var serviceSchema = new Schema({
         type: String,
         required: true
     },
-    sizes: [sizeSchema],
+    price: Number,
+    duration: {
+        type: String,
+        enum: ['1 hour', '30 minutes', '2 hours', 'Custom']
+    },
 }, {
         timestamps: true,
     })

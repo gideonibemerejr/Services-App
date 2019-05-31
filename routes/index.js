@@ -41,11 +41,12 @@ router.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
-/* GET services page. */
-router.get('/services', indexCtrl.services);
+
 /* GET login and register pages. */
 router.get('/login', indexCtrl.login);
 
 router.get('/register', indexCtrl.register);
+
+router.get('/contact', indexCtrl.contact);
 
 module.exports = router;

@@ -695,13 +695,13 @@ ul.dropdown-menu li {
 }
 
 .cta {
-  background: url("../images/bg/home-3.jpg") fixed 50% 50%;
+  background: url("http://demo.themefisher.com/megakit/images/bg/home-3.jpg") fixed 50% 50%;
   background-size: cover;
   padding: 120px 0px;
 }
 
 .cta-block {
-  background: url("../images/bg/home-3.jpg") no-repeat;
+  background: url("http://demo.themefisher.com/megakit/images/bg/home-3.jpg") no-repeat;
   background-size: cover;
 }
 

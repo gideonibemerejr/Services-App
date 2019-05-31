@@ -33,7 +33,20 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    {{ service.serviceName }}
+                    <p>
+                        {% if service.price %}
+                            ${{ service.price}}
+                    {% else %}
+
+                        {% endif %}
+                    </p>
+                    <p>
+                        {% if service.duration %}
+                            {{ service.duration }}
+                    {% else %}
+
+                        {% endif %}
+                    </p>
                 </div>
             </div>
         </div>

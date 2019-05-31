@@ -2,11 +2,16 @@ const Service = require('../models/service');
 
 module.exports = {
   index,
-  services,
   login,
   register,
+  contact
 
 };
+
+function contact(req, res) {
+  res.render('contact', { title: 'Contact', user: req.user })
+}
+
 function register(req, res, next) {
   res.render('register', { title: 'Register' });
 }
@@ -26,13 +31,3 @@ function index(req, res, next) {
   });
 }
 
-function services(req, res, next) {
-  Service.find({}, (err, services) => {
-    res.render('services/index', {
-      title: 'Dashboard | Services',
-      heading: 'Services',
-      services,
-      user: req.user
-    });
-  });
-}
