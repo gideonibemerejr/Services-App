@@ -16,31 +16,27 @@
                             </a>
                             <div aria-labelledby="dropdownMenuLink" class="dropdown-menu dropdown-menu-right shadow animated--fade-in">
                                 <div class="dropdown-header">Actions:</div>
-                                <form action="/ceo/services/{{ service._id }}?_method=PUT" method="POST">
-                                    <button class="d-flex flex-row dropdown-item align-items-center justify-content-between" type="submit">
-                                        <p style="margin: 0;">Edit</p>
-                                        <i class="far fa-edit"></i>
-                                    </button>
-                                </form>
-                                <div class="dropdown-divider"></div>
-                                <form action="/ceo/services/{{ service._id }}?_method=DELETE" method="POST">
-                                    <button class="d-flex flex-row dropdown-item text-danger align-items-center justify-content-between" type="submit">
-                                        <p style="margin: 0;">Delete</p>
-                                        <i class="far fa-trash-alt"></i>
-                                    </button>
-                                </form>
-                            </div>
+                                <a class="d-flex flex-row dropdown-item align-items-center justify-content-between" href="/ceo/services/{{ service._id }}/edit">
+                                    <p style="margin: 0;">Edit</p>
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            </form>
+                            <div class="dropdown-divider"></div>
+                            <form action="/ceo/services/{{ service._id }}?_method=DELETE" method="POST">
+                                <button class="d-flex flex-row dropdown-item text-danger align-items-center justify-content-between" type="submit">
+                                    <p style="margin: 0;">Delete</p>
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </form>
                         </div>
                     </div>
-                    <!-- Card Body -->
-                    <div class="card-body">
-                        Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            in order to toggle a dropdown menu.
-                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    {{ service.serviceName }}
                 </div>
             </div>
-        {% endfor %}
+        </div>
+    {% endfor %}
 
-    </div>
-{% endblock %}
+</div>{% endblock %}

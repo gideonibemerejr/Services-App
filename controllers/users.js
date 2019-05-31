@@ -1,4 +1,6 @@
 const User = require('../models/user');
+const Service = require('../models/service');
+
 
 module.exports = {
   index,
@@ -20,7 +22,12 @@ function index(req, res, next) {
 function show(req, res, next) {
   User.findById(req.params.id, (err, user) => {
     if (err) return next(err);
-    res.render('users/show', { user: req.user });
+    Service.find({}, (err, services) => {
+      if (err) return next(err);
+      res.render('users/show', { user: req.user, services });
+    })
+
+
   });
 }
 
