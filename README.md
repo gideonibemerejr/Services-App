@@ -14,13 +14,13 @@ The point of the app is to be able to schedule appointments for 'services' from 
 - HTML
 - CSS
 - JS
-- Twig
-- Font Awesome
+- [Twig](https://twig.symfony.com/)
+- [Font Awesome](https://fontawesome.com/)
 - [SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/)
 - [Megakit](http://demo.themefisher.com/megakit/index.html)
-- Bootstrap 4
-- NodeJs
-- Passport
+- [Bootstrap 4](https://getbootstrap.com/)
+- NodeJS
+- PassportJS
 - Oauth 2.0
 
 ## Getting Started 
