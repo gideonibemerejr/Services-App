@@ -1,10 +1,8 @@
 # Services-app
-Uses twig templates
-https://www.figma.com/file/rTMRRESCVso3XDfCt9amfb/Material-Design-Dashboard?node-id=126%3A1017
 
 
-## Idea
-The point of the app is to be able to schedule appointments for 'services' from a business on the front end and control those appointments and services on the backend
+## Introduction
+The point of the app is to be able to schedule appointments for 'services' from a business on the front end and control those appointments and services on the backend. The example front and back ends are for a business called All Pro that specializes 
 
 ## Screenshots 
 []()
@@ -18,6 +16,8 @@ The point of the app is to be able to schedule appointments for 'services' from 
 - JS
 - Twig
 - Font Awesome
+- [SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/)
+- [Megakit](http://demo.themefisher.com/megakit/index.html)
 - Bootstrap 4
 - NodeJs
 - Passport
