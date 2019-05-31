@@ -20,6 +20,7 @@ require('./config/passport');
 // require our routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var apptsRouter = require('./routes/appts');
 var adminsRouter = require('./routes/admin/admins');
 var adminServicesRouter = require('./routes/admin/services');
 
@@ -49,6 +50,7 @@ app.use(passport.session());
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/', apptsRouter);
 app.use('/ceo', adminsRouter);
 app.use('/ceo/services', adminServicesRouter);
 

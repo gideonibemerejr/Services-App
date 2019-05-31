@@ -11,10 +11,6 @@ const apptSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Service'
     },
-    time: {
-        type: String,
-        unique: true
-    },
     date: Date
 }, {
         timestamps: true

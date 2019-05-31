@@ -7,6 +7,7 @@
     <link href="/stylesheets/style.css" rel="stylesheet">
 {% endblock %}
 {% block main %}
+
     <body>
         {% include "../partials/header.twig" %}
         <div class="row justify-content-center">
@@ -15,7 +16,11 @@
                     <div class="text-center"><img src="{{ user.avatar }}" alt="" class="user-img rounded-circle"></div>
                     <div class="card-body p-4 text-center">
                         <h5 class="mb-0 mt-4">{{ user.name }}</h5>
-                        <a href="/users/{{user._id}}/appts">My Appointments</a>
+                        <a href="/users/{{user._id}}/show">My Profile</a>
+                        {% for a in appts %}
+                            <p>{{ a.service.serviceName }}</p>
+                            <p>{{ a.date }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

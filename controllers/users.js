@@ -1,33 +1,36 @@
 const User = require('../models/user');
 const Service = require('../models/service');
+const Appt = require('../models/appt');
 
 
 module.exports = {
-  index,
+  appts,
   show
 };
 
-function index(req, res, next) {
-  let modelQuery = req.query.name
-    ? { name: new RegExp(req.query.name, 'i') }
-    : {};
-
-  let sortKey = re.query.sor || 'name';
-  User.find({}, (err, users) => {
+function appts(req, res, next) {
+  User.findById(req.params.id).populate('appointments').exec((err, user) => {
     if (err) return next(err);
-    res.render('admin/users/index', { users });
-  });
+    Service.find({}, (err, services) => {
+      if (err) return next(err);
+      Appt.find({ user: req.params.id }, (err, appts, next) => {
+        if (err) return next(err);
+        res.render('users/appts', { user: req.user, services, appts });
+      })
+
+    })
+    console.log(user);
+  })
 }
 
 function show(req, res, next) {
-  User.findById(req.params.id, (err, user) => {
+  User.findById(req.params.id).populate('appointments').exec((err, user) => {
     if (err) return next(err);
     Service.find({}, (err, services) => {
       if (err) return next(err);
       res.render('users/show', { user: req.user, services });
     })
-
-
+    console.log(user);
   });
 }
 

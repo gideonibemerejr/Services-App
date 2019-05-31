@@ -10,7 +10,6 @@ const userSchema = new Schema(
     avatar: String,
     email: String,
     Street: String,
-    City: String,
     Zip: Number,
     Phone: String,
     appointments: [{ type: Schema.Types.ObjectId, ref: 'Appointment' }],
