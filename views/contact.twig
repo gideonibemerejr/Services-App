@@ -1,0 +1,54 @@
+{% extends "./partials/layout.twig" %}
+{% block links %}
+    <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" rel="stylesheet">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link
+    href="/stylesheets/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link href="/stylesheets/style.css" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <body>
+
+        {% include "./partials/header.twig" %}
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div
+                class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Contact Us</h1>
+                            </div>
+                            <form autocomplete="off" class="user">
+                                <div class="form-group text-center">
+                                    <input class="form-control form-control-user" id="exampleFirstName" name="name" placeholder="Name" type="text" {% if user %} value="{{ user.name }}" {% endif %}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Email Address" type="email" {% if user %} value="{{ user.email }}" {% endif %}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control form-control-user" id="exampleInputEmail" name="phone" placeholder="Mobile number" {% if user.phone %} value="{{ user.phone }}" {% endif %} type="text">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" placeholder="Your Message" rows="4"></textarea>
+                                </div>
+                                <button class="btn btn-main btn-user btn-block" type="submit">
+                                    Send Message
+                                </button>
+                            </form>
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="/login">Forgot to login? Login!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% include "./partials/footer.twig" %}
+    </body>
+{% endblock %}
+{% block scripts %}{% endblock %}
