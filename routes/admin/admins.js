@@ -17,9 +17,7 @@ router.post(
   })
 );
 
-// /* Admin Appts Access */
-// router.get('/appointments', apptsCtrl.index);
-// router.get('/calendarJSON', apptsCtrl.data);
+
 
 // /* Admin Tasks Access */
 // router.get('/tasks', tasksCtrl.index);

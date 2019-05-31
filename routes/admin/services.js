@@ -12,6 +12,9 @@ router.get('/new', servicesCtrl.newService);
 
 router.post('/', utils.hasInfo, servicesCtrl.create);
 
-// router.put('/services/:id', servicesCtrl.update);
-// router.delete('/services/:id', servicesCtrl.deleteService);
-// router.get('/services/:id/edit', servicesCtrl.edit);
+
+router.delete('/:id', servicesCtrl.deleteService);
+router.get('/:id/edit', servicesCtrl.edit);
+router.put('/:id', servicesCtrl.update);
+
+module.exports = router;

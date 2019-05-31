@@ -1,0 +1,9 @@
+{% extends "../partials/layout.twig" %}
+{% block content %}
+    <form action="/ceo/services/{{ service._id }}?_method=PUT" autocomplete="off" class="user" method="POST">
+        <div class="form-group">
+            <input class="form-control form-control-user" name="serviceName" placeholder="Service Name" type="text" value="{{ service.serviceName }}">
+        </div>
+        <button class="btn btn-info btn-user btn-block" type="submit">Update Service</button>
+    </form>
+{% endblock %}
