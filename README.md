@@ -40,6 +40,5 @@ First things first, go ahead and login to make the experience easier. Try to boo
 
 1. Appointment calendar on the back end
 2. Task manager on the back end
-3. Pricing page on the front end
-4. Contact page on the front end
-5. 
+3. Cart/Checkout Flow
+4. User profile showing detailed appointments
