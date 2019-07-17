@@ -42,3 +42,5 @@ First things first, go ahead and login to make the experience easier. Try to boo
 2. Task manager on the back end
 3. Cart/Checkout Flow
 4. User profile showing detailed appointments
+
+_Version 1.0 ESROSN&reg; c/o Gideon Ibemere, Jr_
